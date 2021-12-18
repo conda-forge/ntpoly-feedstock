@@ -17,7 +17,7 @@ build:
   script:
     - export CXX="$PREFIX/bin/mpicxx" CC="$PREFIX/bin/mpicc" FC="$PREFIX/bin/mpifort"
     - export OPAL_PREFIX=$PREFIX  # [mpi == "openmpi" and build_platform != target_platform]
-    - export export FCFLAGS="${FCFLAGS} -fallow-argument-mismatch"  # [build_platform != target_platform]
+    - export export FFLAGS="${FFLAGS} -fallow-argument-mismatch"  # [build_platform != target_platform]
     - cmake ${CMAKE_ARGS} -DBUILD_SHARED_LIBS=ON -G Ninja -B _build
     - cmake --build _build
     - cmake --install _build
