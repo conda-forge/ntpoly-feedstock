@@ -1,6 +1,6 @@
 {% set name = "NTPoly" %}
 {% set version = "2.7.0" %}
-{% set build = 1 %}
+{% set build = 2 %}
 {% set mpi = mpi or "mpich" %}
 
 package:
@@ -33,16 +33,14 @@ requirements:
     - {{ compiler('fortran') }}
     - cmake
     - ninja
+    - llvm-openmp  # [osx]
+    - libgomp  # [linux]
   host:
     - {{ mpi }}
     - libblas
     - liblapack
-    - llvm-openmp  # [osx]
-    - libgomp  # [linux]
   run:
     - {{ mpi }}
-    - libblas
-    - liblapack
 
 
 test:
