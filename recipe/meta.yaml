@@ -1,6 +1,6 @@
 {% set name = "NTPoly" %}
-{% set version = "2.7.1" %}
-{% set build = 1 %}
+{% set version = "3.0.0" %}
+{% set build = 0 %}
 {% set mpi = mpi or "mpich" %}
 
 package:
@@ -9,7 +9,7 @@ package:
 
 source:
   url: https://github.com/william-dawson/{{ name }}/archive/refs/tags/{{ name|lower }}-v{{ version }}.tar.gz
-  sha256: c15d9f51ac054b4ef0565ce5c4c8589c10bdbab4dc3442ebd109691e2bbfc7e2
+  sha256: bd0cf5170ce165f414f51ba9d2e77467ca669b2a3c1cc15ef199a93aba4da621
 
 build:
   number: {{ build }}
